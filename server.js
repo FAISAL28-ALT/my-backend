@@ -20,11 +20,31 @@ app.use(cors({
     'http://127.0.0.1:5500',
     'https://portfolio-fronted-teal.vercel.app/'
   ],
+  app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
+app.options('*', cors());
 
+app.use(express.json());
+
+// Example endpoint
+app.get('/api/portfolio', (req, res) => {
+  res.json({ message: 'Portfolio data from Render backend!' });
+});
+
+const PORT = process.env.PORT || 5500;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 // Static files
 app.use('/static', express.static(path.join(__dirname, 'public')));
 
