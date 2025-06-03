@@ -146,8 +146,8 @@ app.get('/api/portfolio', async (req, res) => {
         socialLinks: [
           { platform: 'facebook', url: 'https://facebook.com', icon: 'fab fa-facebook' },
           { platform: 'twitter', url: 'https://twitter.com', icon: 'fab fa-twitter' },
-          { platform: 'instagram', url: 'https://instagram.com', icon: 'fab fa-instagram' },
-          { platform: 'linkedin', url: 'https://linkedin.com', icon: 'fab fa-linkedin' }
+          { platform: 'instagram', url: 'https://www.instagram.com/mrfaisal900?igsh=MXd1Nmwzdmlib3h4Yw==', icon: 'fab fa-instagram' },
+          { platform: 'linkedin', url: 'https://www.linkedin.com/in/faisal-khan-7564a1261/', icon: 'fab fa-linkedin' }
         ],
         roles: [
           { title: 'WEB DEVELOPER' },
